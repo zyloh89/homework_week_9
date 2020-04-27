@@ -12,5 +12,5 @@ https://zyloh89.github.io/homework_week_9/
 ## Setup
 
 In your terminal, browse to the relevant folder, run `node index.js`
-Then, install the necessady npm packages by running `npm install`
+Then, install the necessary npm packages by running `npm install`
 

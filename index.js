@@ -75,7 +75,7 @@ function promptInput() {
         type: 'input',
         name: 'installation',
         message: "What command should be run to install dependencies?",
-        default: "node index.js"
+        default: "npm install"
     },
     {
         type: 'input',

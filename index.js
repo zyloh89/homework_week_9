@@ -4,13 +4,14 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 const util = require("util");
 
+const writeFileAsync = util.promisify(fs.writeFile);
 
 //Prompts questions to collect input of information to generate README
-function promptUser() {
+function promptInput() {
     return inquirer.prompt ([
     {
         type: 'input',
-        name:: 'username',
+        name: 'username',
         message: "What is your GitHub username?",
         default: "zyloh89",
         validate: function (input) {
@@ -22,7 +23,7 @@ function promptUser() {
     },
     {
         type: 'input',
-        name:: 'email',
+        name: 'email',
         message: "What is your email?",
         validate: function (input) {
             if (input === "") {
@@ -33,34 +34,34 @@ function promptUser() {
     },
     {
         type: 'input',
-        name:: 'title',
+        name: 'title',
         message: "What is your GitHub project title?",
         validate: function (input) {
             if (input === "") {
-                return "Please enter GitHub project title."
+                return "Please enter GitHub project title.";
             }
             return true;
         }
     },
     {
         type: 'input',
-        name:: 'project_URL',
-        message: "What is the URL to your project?" 
+        name: 'project_URL',
+        message: "What is the URL to your project?" ,
         validate: function (input) {
             if (input === "") {
-                return "Please enter project URL."
+                return "Please enter project URL.";
             }
             return true;
         }
     },
     {
         type: 'input',
-        name:: 'description',
+        name: 'description',
         message: "Please write a short description of your project." 
     },
     {
         type: 'list',
-        name:: 'license',
+        name: 'license',
         message: "What kind of license should your project have? (Use arrow keys)" ,
         default: "MIT",
         choices: [
@@ -72,40 +73,38 @@ function promptUser() {
     },
     { 
         type: 'input',
-        name:: 'installation',
-        message: "What command should be run to install dependencies?"
+        name: 'installation',
+        message: "What command should be run to install dependencies?",
         default: "node index.js"
     },
     {
         type: 'input',
-        name:: 'tests',
+        name: 'tests',
         message: "What command should be run to run tests? (eg. npm test)" 
     },
     {
         type: 'input',
-        name:: 'usage',
+        name: 'usage',
         message: "What does the user need to know about using the repo?" 
     }, 
     {
         type: 'input',
-        name:: 'contributing',
+        name: 'contributing',
         message: "What does the user need to know about contributing to the repo?" 
     },
 
 ]);
 }
 
-
-
-async function init () {
+async function init() {
     try{
-
-        
+        const data = await promptInput();
+        const readme = generateMarkdown(data);
+        await writeFileAsync("./output/README.md", readme);
+        console.log("generate readme");
+    } catch (err) {
+        console.log(err);
     }
-    writeToFile(fileName, data) {
-}
-
-function init() {
 
 }
 

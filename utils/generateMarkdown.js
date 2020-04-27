@@ -4,21 +4,21 @@ function generateMarkdown(data) {
 
 ## Description
 
-# ${data.description}
+${data.description}
 
 ## Table of Contents
 
-* [Installation] (#installation)
+* [Installation](#installation)
 
-* [Usage] (#usage)
+* [Usage](#usage)
 
-* [License] (#license)
+* [License](#license)
 
-* [Contributing] (#contributing)
+* [Contributing](#contributing)
 
-* [Tests] (#tests)
+* [Tests](#tests)
 
-* [Questions] (#questions)
+* [Questions](#questions)
 
 ## Installation
 
@@ -28,21 +28,21 @@ ${data.installation}
 
 ## Usage
 
-${Data.usage}
+${data.usage}
 
-##License
+## License
 
 This project is licensed under the ${data.license} license.
 
 ## Contributing
 
-${Data.contributing}
+${data.contributing}
 
 ## Tests
 
 To run tests, run the following command:
 
-${Data.tests}
+${data.tests}
 
 ## Questions
 

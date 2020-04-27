@@ -4,7 +4,7 @@ function generateMarkdown(data) {
 
 ## Description
 
-# $(data.description)
+# ${data.description}
 
 ## Table of Contents
 
@@ -24,29 +24,29 @@ function generateMarkdown(data) {
 
 To install necessary dependencies, run the following command:
 
-$(data.installation)
+${data.installation}
 
 ## Usage
 
-$(Data.usage)
+${Data.usage}
 
 ##License
 
-This project is licensed under the $(data.license) license.
+This project is licensed under the ${data.license} license.
 
 ## Contributing
 
-$(Data.contributing)
+${Data.contributing}
 
 ## Tests
 
 To run tests, run the following command:
 
-$(Data.tests)
+${Data.tests}
 
 ## Questions
 
-If you have any questions about the repo, contact $(data.username) at $(data.email).
+If you have any questions about the repo, contact ${data.username} at ${data.email}.
 
 `;
 }
